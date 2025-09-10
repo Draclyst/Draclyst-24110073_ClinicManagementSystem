@@ -109,6 +109,8 @@ int main(){
     patient2.setRevisitDate("09-12-2025");
     patient1.displayInfo();
     patient2.displayInfo();
+    patient1.setPrescription(new Prescription("Painkillers", "2 times a day", "After meals"));
+    patient2.setPrescription(new Prescription("Weight Loss Pills", "Once a day", "Before breakfast"));
     Appointment a1("08-09-2025", "3:00 PM", "General Checkup", &patient1, &doctor1);
     Appointment a2("09-09-2025", "12:45 PM", "Obesity Checkup", &patient2, &doctor2);
     doctor1.AssignAppointment(&a1);
@@ -118,8 +120,8 @@ int main(){
     a1.updateStatus("Completed");
     a2.updateStatus("Cancelled");
     doctor1.displayInfo();
+    patient1.getPrescription()->displayInfo();
     doctor2.displayInfo();
     return 0;
 }
-
 
